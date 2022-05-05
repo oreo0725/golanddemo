@@ -1,5 +1,21 @@
 # Unit test
 
+## 甚麼是工作單元？
+1. 被呼叫的公開方法回傳一個結果值
+2. 在呼叫方法的前後，系統可見的狀態或行為發生變化
+3. 呼叫一個不受測試所控制的第三方系統
+
+## 單元測試應該具備以下特質：
+1. Repeatable Automation
+2. 容易被實現
+3. 它到第二天應該還有存在意義（不是臨時性的）
+4. Easy to run/trigger
+5. Fast
+6. 執行結果應該一致
+7. 能完全掌控被測試的單元
+8. 是完全被隔離的（獨立於其他測試）
+9. 如果它的執行結果是失敗的，應該要很簡單清楚地呈現我們的期望為何，問題在哪
+
 ## To write a unit test
 - `math.go`, the test file `math_test.go`
 - use the [Testify](https://github.com/stretchr/testify) library 
@@ -46,4 +62,14 @@ for _, tc := range testcases {
         require.Equal(t, tc.expect, got)
     })
 }
+```
+
+## Mock generation
+
+```shell
+# install mockgen
+go install github.com/golang/mock/mockgen@v1.6.0
+
+# to generate the mock object
+go generate ./unittest/ex2product/credit/...
 ```
