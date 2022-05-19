@@ -18,8 +18,8 @@ type Product struct {
 	Currency string
 }
 
-func Purchase(u *User, p *Product) error {
-	creditService := credit.NewService()
+func Purchase(u *User, p *Product, cs credit.Service) error {
+	creditService := cs
 
 	ct, err := creditService.GetByUserID(u.ID)
 	if err != nil {
