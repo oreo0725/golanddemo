@@ -3,11 +3,15 @@ package ex2product
 import (
 	"testing"
 
+	//"golandtest/unittest/ex2product/credit"
+	//"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/require"
 )
 
 //TODO revise this test
 func TestPurchase(t *testing.T) {
+	//ctrl := gomock.NewController(t)
+	//mockCreditService := credit.NewMockService(ctrl)
 
 	u := &User{
 		ID: "tommy@kkbox.com",
